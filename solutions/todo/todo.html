@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Todo</title>
+        <link
+            href="https://fonts.googleapis.com/icon?family=Material+Icons"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="style.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="app">
+                <form action="" name="todo">
+                    <input
+                        type="text"
+                        name="new"
+                        placeholder="What do you want to do?"
+                    />
+                    <button type="submit">
+                        <span class="material-icons"> add_task </span>
+                    </button>
+                </form>
+
+                <div id="doing">
+                    <p class="title">Doing</p>
+                    <ul id="doing-list">
+                        <li class="empty" style="text-align: center">
+                            Nothing to do
+                        </li>
+                    </ul>
+                </div>
+
+                <div id="completed">
+                    <p class="title">Completed</p>
+                    <ul id="completed-list">
+                        <li class="empty" style="text-align: center">
+                            Hey! Do something
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <script src="script.js"></script>
+    </body>
+</html>
