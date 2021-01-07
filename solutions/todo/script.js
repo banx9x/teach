@@ -32,7 +32,7 @@ function createItems(todo) {
         // Khi check, cập nhật trong todos list
         todos[this.dataset.id - 1].completed = this.checked;
         // Animation tý
-        li.style.transform = "translateX(20px)";
+        li.style.transform = "translateX(15px)";
         li.style.opacity = 0;
 
         // Sau khi animation
@@ -58,6 +58,8 @@ function createItems(todo) {
 
             // Cập nhật xong thì render lại
             render();
+            // Alert báo đã cập nhật
+            showAlert("Đã cập nhật nhé 😊");
         }, 250); // Đợi animation xong
     };
 
@@ -77,6 +79,64 @@ function createItems(todo) {
 let form = document.forms.todo;
 let doing = document.getElementById("doing-list");
 let completed = document.getElementById("completed-list");
+let alertwrapper = document.getElementById("alert-wrapper");
+
+// Thêm sự kiện cho form
+form.addEventListener("submit", function (ev) {
+    // Ngăn event mặc định, không cho trình duyệt load lại
+    ev.preventDefault();
+    let input = form.elements.new;
+
+    // Kiểm tra nếu input rỗng thì chửi
+    if (input.value.trim() == "") {
+        input.placeholder = "Hey, write something stupid";
+        return;
+    }
+
+    // Tạo object todo mới, thêm vào mảng todos
+    let newTodo = {
+        id: todos.length + 1,
+        title: this.elements.new.value,
+        completed: false,
+    };
+    todos.push(newTodo);
+    // Tạo một node mới, push vào doingList
+    doingList.push(createItems(newTodo));
+    // Reset form
+    this.elements.new.value = "";
+    input.placeholder = "What do you want to do?";
+    // Render lại =]]
+    render();
+    // Alert báo đã thêm thành công
+    showAlert("Đã thêm rồi nhé 🤣");
+});
+
+function showAlert(msg) {
+    let div = document.createElement("div");
+    div.className = "alert";
+
+    let p = document.createElement("p");
+    p.textContent = msg;
+
+    let icon = document.createElement("span");
+    icon.className = "material-icons";
+    icon.textContent = "close";
+
+    div.append(p, icon);
+
+    alertwrapper.append(div);
+    let timer = setTimeout(() => {
+        div.classList.add("flyout");
+
+        setTimeout(() => div.remove(), 300);
+    }, 4700);
+
+    icon.onclick = () => {
+        clearTimeout(timer);
+        div.classList.add("flyout");
+        setTimeout(() => div.remove(), 300);
+    };
+}
 
 // Hàm render, duyệt qua 2 mảng doingList và completedList (chứa các node đã tạo)
 // Kiểm tra node đã có trong DOM hay chưa
@@ -108,31 +168,3 @@ function render() {
 
 // Chạy hàm render ban đầu
 render();
-
-// Thêm sự kiện cho form
-form.addEventListener("submit", function (ev) {
-    // Ngăn event mặc định, không cho trình duyệt load lại
-    ev.preventDefault();
-    let input = form.elements.new;
-
-    // Kiểm tra nếu input rỗng thì chửi
-    if (input.value.trim() == "") {
-        input.placeholder = "Hey, write something stupid";
-        return;
-    }
-
-    // Tạo object todo mới, thêm vào mảng todos
-    let newTodo = {
-        id: todos.length + 1,
-        title: this.elements.new.value,
-        completed: false,
-    };
-    todos.push(newTodo);
-    // Tạo một node mới, push vào doingList
-    doingList.push(createItems(newTodo));
-    // Reset form
-    this.elements.new.value = "";
-    input.placeholder = "What do you want to do?";
-    // Render lại =]]
-    render();
-});
