@@ -1,104 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Slider</title>
-    <style>
-      .container {
-        min-height: 100vh;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Dropdown</title>
+        <style>
+            .sub-menu {
+                display: none;
+            }
 
-      .wrapper {
-        max-width: 600px;
-      }
+            .show {
+                display: block !important;
+            }
+        </style>
+    </head>
+    <body>
+        <ul id="menu" class="menu">
+            <li class="menu-items">
+                Dropdown 1
+                <ul class="sub-menu">
+                    <li class="sub-items">Submenu 1 - 1</li>
+                    <li class="sub-items">Submenu 1 - 2</li>
+                    <li class="sub-items">Submenu 1 - 3</li>
+                </ul>
+            </li>
+            <li class="menu-items">
+                Dropdown 2
+                <ul class="sub-menu">
+                    <li class="sub-items">Submenu 2 - 1</li>
+                    <li class="sub-items">Submenu 2 - 2</li>
+                    <li class="sub-items">Submenu 2 - 3</li>
+                </ul>
+            </li>
+            <li class="menu-items">
+                Dropdown 3
+                <ul class="sub-menu">
+                    <li class="sub-items">Submenu 3 - 1</li>
+                    <li class="sub-items">Submenu 3 - 2</li>
+                    <li class="sub-items">Submenu 3 - 3</li>
+                </ul>
+            </li>
+        </ul>
 
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        vertical-align: middle;
-      }
+        <p id="click"></p>
+        <script>
+            // Cái này để lưu cái menu trước đó đã click
+            let prev;
 
-      .main-img {
-        height: 750px;
-      }
+            // Thay vì add handler cho menu, mình add handler cho event click trên toàn trang (document). Cái này gọi nà nổi cmn bọt sự kiện
+            document.addEventListener("click", function (ev) {
+                let li = ev.target.closest(".menu-items");
 
-      .thumbs .list {
-        display: flex;
-      }
-
-      .thumbs .list .list-item {
-        width: 20%;
-        height: 150px;
-      }
-    </style>
-  </head>
-  <body>
-    <div class="container">
-      <div class="wrapper">
-        <div class="main-img">
-          <img
-            id="big-img"
-            src="https://nld.mediacdn.vn/thumb_w/540/2019/12/18/photo-3-1576655764752750978133.jpg"
-            alt=""
-          />
-        </div>
-        <div class="thumbs">
-          <div class="list">
-            <div class="list-item">
-              <img
-                src="https://nld.mediacdn.vn/thumb_w/540/2019/12/18/photo-3-1576655764752750978133.jpg"
-                alt=""
-                class="thumb-img"
-              />
-            </div>
-
-            <div class="list-item">
-              <img
-                src="https://danviet.mediacdn.vn/upload/2-2017/images/2017-04-26/149317529762058-anh-7.jpg"
-                alt=""
-                class="thumb-img"
-              />
-            </div>
-            <div class="list-item">
-              <img
-                src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkGNkGO3SZJKqdfd551fdSIxYoIMFqudAE1g&usqp=CAU"
-                alt=""
-                class="thumb-img"
-              />
-            </div>
-            <div class="list-item">
-              <img
-                src="https://kenh14cdn.com/thumb_w/660/2019/4/5/5630018821876854846616391225428820375371776n-15544414794831029776266.jpg"
-                alt=""
-                class="thumb-img"
-              />
-            </div>
-            <div class="list-item">
-              <img
-                src="https://kenh14cdn.com/2018/3/30/screen-shot-2018-03-30-at-110343-pm-1522425931132943040526.png"
-                alt=""
-                class="thumb-img"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <script>
-      let main = document.getElementById("big-img");
-      let thumbs = document.querySelectorAll(".thumb-img");
-      thumbs.forEach((img) => {
-        img.onclick = function () {
-          main.src = this.src;
-        };
-      });
-    </script>
-  </body>
+                if (li) {
+                    prev &&
+                        prev != li &&
+                        prev
+                            .querySelector(".sub-menu")
+                            .classList.remove("show");
+                    prev = li;
+                    li.querySelector(".sub-menu").classList.toggle("show");
+                    click.textContent = ev.target.firstChild.textContent;
+                } else {
+                    prev &&
+                        prev
+                            .querySelector(".sub-menu")
+                            .classList.remove("show") &&
+                        (prev = null);
+                }
+            });
+        </script>
+    </body>
 </html>
