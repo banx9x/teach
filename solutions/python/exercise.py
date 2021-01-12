@@ -1,4 +1,4 @@
-# 1. Viết hàm find_min_max() cho phép nhập một số lượng "số nguyên" bất kỳ, in ra số lớn nhất, nhỏ nhất
+# 1. Viết hàm find_min_max() cho phép nhập một số lượng "số nguyên dương" bất kỳ, in ra số lớn nhất, nhỏ nhất
 # Dừng và in ra kết quả khi nhập 'q' hoặc 'c'
 # Ví dụ:
 # Enter number: 12
@@ -15,20 +15,73 @@
 # Gợi ý: sử dụng vòng lặp while
 
 
+def find_min_max():
+    number = input("Enter number: ")
+
+    if number.lower() == 'q' or number.lower() == 'c':
+        return
+
+    min = max = int(number)
+    list_of_number = number
+
+    while True:
+        number = input("Enter number: ")
+
+        if number.lower() == 'q' or number.lower() == 'c':
+            break
+
+        if max < int(number):
+            max = int(number)
+
+        if min > int(number):
+            min = int(number)
+
+        list_of_number += " " + number
+
+    print("List of numbers: " + list_of_number)
+    print(f"Largest number: {max}")
+    print(f"Smallest number: {min}")
+
+
+# find_min_max()
 # 2. Viết hàm print_fibonacci(n) in ra n số trong dãy fibonacci. Mặc định số thứ nhất và 2 là 0 1
 # Ví dụ print_fibonacci(10)
 # 0 1 1 2 3 5 8 13 21 34
-
 
 # 3. Viết hàm print_pattern() in ra theo mẫu sau
 # 1  2  3  4  5  6  7  8  9 10
 # 2  4  6  8 10 12 14 16 18 20
 # 3  6  9 12 15 18 21 24 27 30
 # ...
+def print_pattern():
+    for i in range(1, 11):
+        s = ""
+        for j in range(1, 11):
+            s += f"{i * j:3}"
+
+        print(s)
 
 
+# print_pattern()
 # 4. Viết hàm is_leap_year(year) kiểm tra xem một năm có phải năm nhuận hay không, kết quả trả về là True hoặc False
 # Lưu ý về các trường hợp của năm nhuận
+
+
+def is_leaf_year(year):
+    if year % 100 == 0:
+        if year % 400 == 0:
+            return True
+        else:
+            return False
+    elif year % 4 == 0:
+        return True
+    else:
+        return False
+
+
+# print(is_leaf_year(2020))
+# print(is_leaf_year(2000))
+# print(is_leaf_year(2100))
 
 
 # 5. Viết hàm tìm nghiệm phương trình bậc 2 ax^2 + bx + c = 0, hàm nhận 3 tham số a, b, c, in ra nghiệm phương trình
@@ -39,6 +92,41 @@
 
 # 7. Viết hàm in ra chữ số đầu và cuối của một số, VD: 12345 -> 15
 
+def func(n):
+    s = str(n)
+    return s[0] + s[-1]
+
+
+print(func(123434))
+
+
+def func(n):
+    last = n % 10
+    first = None
+
+    while n  != 0:
+        first = n % 10
+        n //= 10
+
+    return f"{first}{last}"
+
+# func(123), n = 123
+# last = 123 % 10 = 3
+# fist = None
+# n != 0 (n = 123) -> True
+# first = n % 10 = 123 % 10 = 3
+# n //= 10 -> n = 12
+# n != 0 (n = 12) -> True
+# first = n % 10 = 12 % 10 = 2
+# n //= 10 -> n = 1
+# n != 0 (n = 1) -> True
+# first = n % 10 = 1 % 10 = 1
+# n //= 10 -> n = 0
+# n != 0 (n = 0) -> False
+# 
+# first = 1, last = 3
+
+print(func(4512324))
 
 # 8. Viết hàm kiểm tra một số có phải số Strong hay không (? Số Strong là số có tổng giai thừa các chữ số bằng chính nó). VD: 145 = 1! + 4! + 5! = 1 + 24 + 120 = 145
 
