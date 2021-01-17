@@ -63,8 +63,7 @@ def print_pattern():
 
 
 # print_pattern()
-# 4. Viết hàm is_leap_year(year) kiểm tra xem một năm có phải năm nhuận hay không, kết quả trả về là True hoặc False
-# Lưu ý về các trường hợp của năm nhuận
+# 4. Viết hàm is_leap_year(year) kiểm tra xem một năm có phải năm nhuận hay không, kết quả trả về là True hoặc False, lưu ý về các trường hợp của năm nhuận
 
 
 def is_leaf_year(year):
@@ -84,8 +83,7 @@ def is_leaf_year(year):
 # print(is_leaf_year(2100))
 
 
-# 5. Viết hàm tìm nghiệm phương trình bậc 2 ax^2 + bx + c = 0, hàm nhận 3 tham số a, b, c, in ra nghiệm phương trình
-# Lưu ý điều kiện phương trình
+# 5. Viết hàm tìm nghiệm phương trình bậc 2 ax^2 + bx + c = 0, hàm nhận 3 tham số a, b, c, in ra nghiệm phương trình, lưu ý điều kiện phương trình
 
 # 6. Viết hàm kiểm tra một số có phải số nguyên tố hay không, kết quả trả về True hoặc False
 
@@ -104,7 +102,7 @@ def func(n):
     last = n % 10
     first = None
 
-    while n  != 0:
+    while n != 0:
         first = n % 10
         n //= 10
 
@@ -123,8 +121,9 @@ def func(n):
 # first = n % 10 = 1 % 10 = 1
 # n //= 10 -> n = 0
 # n != 0 (n = 0) -> False
-# 
+#
 # first = 1, last = 3
+
 
 print(func(4512324))
 
@@ -151,9 +150,60 @@ print(func(4512324))
 # 12. Viết hàm is_triangle(a, b, c) nhận vào tham số là 3 cạnh của tam giác, kiểm tra xem độ dài 3 cạnh có tạo thành tam giác hợp lệ hay không, kết quả trả về True hoặc False
 # VD: is_triangle(1, 2, 4) -> True
 
+def is_triangle(a, b, c):
+    return a + b > c and a + c > b and b + c > a
+
+
+print(is_triangle(1, 2, 3))
 
 # 13. Viết nearest(a, b) kiểm tra và trả về số gần với 100 nhất
 # VD: nearest(105, 99) -> 99
 
+
+def nearest(a, b):
+    return a if abs(100 - a) <= abs(100 - b) else b
+
+
+print(nearest(105, 99))
 # 14. Viết hàm sum(value1, unit1, value2, unit2) nhận vào 2 tham số value1 và value2 là giá trị độ dài, unit1 và unit2 là đơn vị độ dài. Quy đổi giá trị unit2 về cùng đơn vị với unit1, tính và in ra tổng giá trị
 # VD: sum(1, 'km', 100, 'm') -> 1.1 km
+
+
+def to_km(v, u):
+    u = u.lower()
+
+    if u == 'km':
+        return v
+    elif u == 'm':
+        return v * 10 ** -3
+    elif u == 'dm':
+        return v * 10 ** -4
+    elif u == 'cm':
+        return v * 10 ** -5
+    elif u == 'mm':
+        return v * 10 ** -6
+
+
+def sum(v1, u1, v2, u2):
+    sum = to_km(v1, u1) + to_km(v2, u2)
+
+    u1 = u1.lower()
+
+    if u1 == 'km':
+        return sum, 'km'
+    elif u1 == 'm':
+        return sum * 10 ** 3, 'm'
+    elif u1 == 'dm':
+        return sum * 10 ** 4, 'dm'
+    elif u1 == 'cm':
+        return sum * 10 ** 5, 'cm'
+    elif u1 == 'mm':
+        return sum * 10 ** 6, 'mm'
+
+
+print(sum(1, 'm', 10, 'mm'))
+print(sum(1, 'km', 100, 'm'))
+print(sum(1, 'mm', 10, 'cm'))
+
+
+

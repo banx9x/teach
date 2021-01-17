@@ -111,20 +111,23 @@ form.addEventListener("submit", function (ev) {
     showAlert("Đã thêm rồi nhé 🤣");
 });
 
+function createAlert(msg) {
+    return `
+        <div class="toast" role="alert" aria-live="assertive" aria-atomic="true">
+            <div class="toast-header">
+                <strong class="me-auto">Bootstrap</strong>
+                <small>11 mins ago</small>
+                <button type="button" class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+            </div>
+            <div class="toast-body">
+                Hello, world! This is a toast message.
+            </div>
+        </div>
+    `;
+}
+
 function showAlert(msg) {
-    let div = document.createElement("div");
-    div.className = "alert";
-
-    let p = document.createElement("p");
-    p.textContent = msg;
-
-    let icon = document.createElement("span");
-    icon.className = "material-icons";
-    icon.textContent = "close";
-
-    div.append(p, icon);
-
-    alertwrapper.append(div);
+    alertwrapper.insertAdjacentHTML("afterbegin", createAlert());
     let timer = setTimeout(() => {
         div.classList.add("flyout");
 

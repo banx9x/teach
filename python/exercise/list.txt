@@ -1,0 +1,104 @@
+Lưu ý, mỗi bài tập viết ra một file riêng biệt
+
+Mô tả rõ ràng thuật toán, trình tự các câu lệnh thực thi, giá trị của biến, ... với một case bất kỳ
+
+Ví dụ:
+
+number = int(input("Enter a number: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+    
+# Nhập số -> n = "1"
+# Chuyển đổi n về số nguyên -> n = 1
+# Kiểm tra điều kiện n % 2 == 0 -> False
+# In ra "Odd"
+
+Bài tập cấu trúc dữ liệu
+
+1. Viết chương trình gợi ý người dùng nhập một dãy số tùy ý (phân tách bằng dấu cách), lưu vào một list. Sắp xếp list số đã nhập, sau đó, tìm và hiển thị số lớn thứ 3 (Lưu ý trường hợp nhiều số trùng nhau)
+
+Ví dụ:
+
+Nhập dãy số: 1 43 53 53 32 65 43 10
+List of numbers: [1 10 32 43 43 53 53 65]
+Số lớn thứ 3 trong dãy đã nhập là 43
+
+
+2. Viết chương trình đếm số phần tử có kiểu str trong một list
+
+Ví dụ:
+
+l = ["a", "b", 1, 2, "c", True, False]
+
+Kết quả
+3
+
+
+3. Viết chương trình xáo trộn các phần tử trong List (theo thứ tự ngẫu nhiên). Sử dụng hàm random.randint(a, b) để lấy số ngẫu nhiên
+
+Ví dụ:
+
+l = [1, 2, 3, 4, 5, 6]
+
+Kết quả
+l = [5, 2, 4, 6, 1, 3]
+
+
+4. Viết chương trình cộng giá trị của 2 hoặc nhiều List chứa các số nguyên (lưu ý số lượng phần tử trong các List có thể khác nhau, cộng giá trị các phần tử có index tương ứng).
+
+Ví dụ:
+
+l1 = [1, 2, 3]
+l2 = [3, 4, 5, 6]
+l3 = [5]
+
+Kết quả
+l4 = [9, 6, 8, 6]
+
+
+# 5. Viết chương trình tìm giá trị lớn nhất, nhỏ nhất trong 3 List (số nguyên) cho trước
+
+Ví dụ:
+
+l1 = [1, 2, 3]
+l2 = [3, 4, 5, 6]
+l3 = [5]
+
+Số lớn nhất: 6
+Số nhỏ nhất: 1
+
+# 6. Viết chương trình chuyển đổi một số nguyên thành một binary list tương ứng
+# VD: 10 -> [1, 0, 1, 0]
+
+
+# 7. Viết chương trình sắp xếp các chữ số của một số sao cho giá trị sau khi sắp xếp là nhỏ nhất (lưu ý giữ nguyên số lượng các chữ số)
+# VD: 23434004
+# result 20033444
+
+
+# 8. Viết chương trình kết hợp 2 phần tử liền kề nhau trong List strings
+# VD: ['a', 'b', 'c', 'd', 'e']
+# result ['ab', 'cd', 'e']
+
+9. Viết chương trình tìm các cặp giá trị trong một List số nguyên sao cho tổng giá trị của chúng bằng một giá trị chỉ định. Các cặp giá trị đặt trong một list of tuples
+
+Ví dụ:
+l = [2, 3, 4, 5, 6], n = 9
+Kết quả 
+l = [(3, 6), (4, 5)]
+
+10. Viết chương trình tách một list các giá trị hỗn hợp (số, chuỗi) thành các tuples chứa các giá trị dựa theo kiểu dữ liệu của chúng, các tuples đặt trong một list
+
+Ví dụ:
+l = [1, 2, 3, 'a', 'b', 'c']
+Kết quả
+l = [(1, 2, 3), ('a', 'b', 'c')]
+
+11. Viết chương trình tìm số lần xuất hiện nhiều nhất của một ký tự trong một chuỗi (không tính dấu cách)
+
+Ví dụ:
+Xin chào các bạn, mình tên là Ba
+()

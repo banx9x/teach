@@ -1,0 +1,67 @@
+Lưu ý, mỗi bài tập viết ra một file riêng biệt
+
+Mô tả rõ ràng thuật toán, trình tự các câu lệnh thực thi, giá trị của biến, ... với một case bất kỳ
+
+Ví dụ:
+
+number = int(input("Enter a number: "))
+
+if number % 2 == 0:
+    print("Even")
+else:
+    print("Odd")
+    
+# Nhập số -> n = "1"
+# Chuyển đổi n về số nguyên -> n = 1
+# Kiểm tra điều kiện n % 2 == 0 -> False
+# In ra "Odd"
+
+Bài tập toán tử logic
+
+1. Kết quả của các biểu thức logic
+
+a = True
+b = not a
+c = not a and not not b and 0
+
+a and b and c # ?
+a or b or c # ?
+a and not b and not not c # ?
+not (a or not b) and c # ?
+not not (a and not not b) or not c # ?
+a and print("What is that? 🤣") # ?
+b or print("What the hell? 😂") # ?
+
+2. Viết chương trình yêu cầu người dùng nhập vào 2 số a, b. Kiểm tra và in ra số lớn hơn, không sử dụng câu lệnh if else, thay vào đó, sử dụng các toán tử logic (and, or, not)
+
+Ví dụ:
+
+Nhập số a: 1
+Nhập số b: 2
+Số lớn hơn trong 2 số [1 2] là 2
+
+3. Viết chương trình yêu cầu người dùng nhập vào một số bất kỳ, kiểm tra và in ra số đó là chẵn hay lẻ, không sử dụng câu lệnh if else, thay vào đó, sử dụng các toán tử logic (and, or, not)
+
+Ví dụ:
+
+Nhập một số nguyên bất kỳ: 2
+2 là số chẵn
+
+4. Viết chương trình yêu cầu người dùng nhập vào hệ số a, b của phương trình bậc nhất ax + b = 0. Tính và in ra nghiệm phương trình đó, lưu ý điều kiện phương trình bậc nhất, ngoài ra không sử dụng câu lệnh if else, thay vào đó, sử dụng các toán tử logic (and, or, not)
+
+Ví dụ:
+
+Nhập hệ số a: 1
+Nhập hệ số b: 2
+Nghiệm của phương trình 1x + 2 = 0 là -2
+
+
+# 5. Viết chương trình yêu cầu người dùng nhập vào 3 số a, b, c là độ dài 3 cạnh. Kiểm tra và in ra a, b, c có tạo thành một tam giác hợp lệ hay không, không sử dụng câu lệnh if else, thay vào đó sử dụng các toán tử logic (and, or, not)
+
+Ví dụ:
+
+Nhập cạnh a: 1
+Nhập cạnh b: 3
+Nhập cạnh c: 3
+[1 3 3] là một tam giác hợp lệ
+

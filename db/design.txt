@@ -1,4 +1,4 @@
-# Mô hình dữ liệu
+Mô hình dữ liệu
 
 Mô hình dữ liệu (data modelling) là quá trình tạo ra mô hình cho dữ liệu muốn lưu trữ trong CSDL
 
