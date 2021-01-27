@@ -3,7 +3,9 @@ def odd():
         yield i
 
 
-sequense = odd()  # tạo một object
+sequense = odd()
+
+print(type(sequense))  # class generator
 
 print(next(sequense))  # 1
 

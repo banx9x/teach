@@ -1,0 +1,18 @@
+Để public một package lên pypi
+
+Đăng ký tài khoản pypi.org
+
+pip3 install setuptools wheel twine
+
+Tạo 3 file trong module, setup.py, README.md và LICENSE
+
+Tạo gói phân phối cho package
+
+python3 setup.py sdist bdist_wheel
+
+- sdist: source distribution
+- bdist_wheel: build distribution
+
+Publish lên PyPi.org:
+
+twine upload

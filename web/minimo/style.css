@@ -1,0 +1,95 @@
+@import url("https://fonts.googleapis.com/css2?family=Inconsolata:wght@200;300;400;500;600;700;800;900&family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
+
+img {
+    max-width: 100%;
+}
+
+.container {
+    max-width: 1060px;
+}
+
+.menu {
+    list-style: none;
+    margin-bottom: 0;
+}
+
+.menu-item {
+    margin-left: 120px;
+}
+
+.navbar {
+    padding-top: 70px;
+    padding-bottom: 70px;
+}
+
+.navbar .container-fluid {
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: uppercase;
+}
+
+.navbar-brand {
+    font-size: 30px;
+    font-family: "Inconsolata";
+    color: rgb(0, 0, 0);
+    line-height: 0.8;
+}
+
+.menu-link {
+    font-size: 14px;
+    font-family: "Playfair Display";
+    color: rgb(98, 98, 98);
+    line-height: 1.714;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.first-post .post-detail {
+    padding: 100px 80px 0px;
+}
+
+.category {
+    font-size: 14px;
+    font-family: "Ubuntu";
+    color: rgb(180, 173, 158);
+    text-transform: uppercase;
+    line-height: 1.2;
+}
+
+.title {
+    font-size: 30px;
+    font-family: "Playfair Display";
+    color: rgb(98, 98, 98);
+    line-height: 1.2;
+    margin-bottom: 30px;
+}
+
+.description {
+    font-size: 14px;
+    font-family: "Playfair Display";
+    color: rgb(98, 98, 98);
+    line-height: 1.714;
+    margin-bottom: 50px;
+}
+
+.comment {
+    font-size: 14px;
+    font-family: "Ubuntu";
+    color: rgb(180, 173, 158);
+    text-transform: uppercase;
+    line-height: 1.2;
+    text-decoration: none;
+}
+
+.list-posts {
+    padding: 130px 80px;
+    gap: 50px;
+}
+
+.post {
+    width: calc((100% - 50px) / 2);
+}
+
+.post-img {
+    margin-bottom: 30px;
+}

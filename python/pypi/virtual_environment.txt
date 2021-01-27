@@ -1,0 +1,41 @@
+Tạo ra các môi trường riêng cho các ứng dụng, cho phép cài đặt các phiên bản khác nhau của một package trong môi trường đó, tránh xung đột giữa các ứng dụng
+
+Để tạo một môi virtual environment cho ứng dụng, sử dụng module venv
+
+sudo apt-get install python3-venv
+
+python3 -m venv env_name
+
+Kích hoạt một virtual environment
+
+Windows
+env_name\bin\activate.bat
+
+Linux
+source env/bin/activate
+
+Hủy kích hoạt virtual environment
+deactivate
+
+Pipenv là công cụ kết hợp 2 công cụ pip và virtual environment, vì vậy, không cần phải sử dụng riêng pip và module venv. Nói cách khác, pipenv là công cụ quản lý phụ thuộc cho một project python (tương tự npm với nodejs)
+
+pip3 install pipenv
+
+Cài đặt một package cho virtual environment với pipenv
+
+pipenv install package_name
+
+Virtual environment được cài đặt trực tiếp trong thư mục project, nó được cài đặt trong thư mục virtualenvs riêng biệt (điều này làm giảm dung lượng project), các gói package được thêm vào pipfile
+
+Để khởi chạy virtual environment
+
+pipenv shell
+
+Để xem thư mục chứa virtual environment
+
+pipenv --venv
+
+Để hủy kích hoạt virtual environment
+exit
+
+Để thay đổi environment trong VSCode, thêm cài đặt python.pythonPath = venv path (pipenv --venv)

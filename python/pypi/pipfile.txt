@@ -1,0 +1,29 @@
+Khi khởi tạo một virtual environment với pipenv, nó tạo ra 2 file Pipfile và Pipfile.lock. Các file này được sử dụng để theo dõi các package và phiên bản của chúng.
+
+Pipfile
+
+- source: chỉ định kho lưu trữ, nơi các package được tải
+- dev: các gói chỉ sử dụng trong môi trường phát triển (như test, ...)
+- package: các package phụ thuộc của project, yêu cầu phải có để project có thể chạy được
+- require: chỉ định phiên bản python khởi chạy project
+
+Pipfile.lock
+
+Chứa chi tiết các gói đã được cài đặt và các phụ thuộc kèm theo và phiên bản cụ thể của gói đã được cài đặt
+
+Pipfile.lock được sử dụng để 'di chuyển' môi trường giữa các máy tính, có thể tạo một môi trường mới với các thông tin từ Pipfile.lock
+
+Để cài đặt môi trường và các phụ thuộc cho ứng dụng từ pipfile.lock
+
+pipenv install (tương tự npm install)
+
+Tuy nhiên, mặc định pipenv sẽ cài đặt phiên bản của các gói được chỉ định trong pipfile, với các package có phiên bản * (latest), có thể sẽ cài đặt phiên bản mới hơn và khác với phiên bản trong pipfile.lock. Để cài đặt đúng phiên bản trong pipfile.lock, sử dụng:
+
+pipenv install --ignore-pipfile
+
+
+Một số câu lệnh thường dùng với pipenv để quản lý package:
+
+- pipenv graph (hiển thị danh sách các phụ thuộc, và các phụ thuộc kèm theo)
+- pipenv update --outdated (cập nhật package cũ, có thể bị bỏ qua nếu trong pipfile chỉ định một gói cụ thể)
+- pipenv update package_name (cập nhật một package cụ thể)

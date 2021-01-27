@@ -1,0 +1,23 @@
+Pythonic nghĩa là mã không chỉ đúng về cú pháp, mà còn tuân thủ các quy ước của cộng đồng Python
+
+PyPi - Python Package Index là công cụ quản lý package của Python, tương tự NPM trong NodeJS (pypi.org)
+
+Để cài đặt package từ PyPi, sử dụng pip3
+
+Các cú pháp thường dùng với pip3
+
+pip3 install package_name
+pip3 install package_name==version
+pip3 install package_name~=version
+pip3 install package_name==major.*
+pip3 install --upgrade package_name
+pip3 uninstall package_name
+pip3 list
+
+Ví dụ gói requests 2.25.1
+- Số đầu tiên ứng với phiên bản chính
+- Số thứ hai ứng với các phiên bản nhỏ, bổ sung tính năng
+- Số thứ ba ứng với các bản vá, sửa lỗi
+
+Mặc định, cài đặt 
+
