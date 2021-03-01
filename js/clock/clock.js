@@ -109,6 +109,7 @@ export default class {
         this.minute = 0;
         this.second = 0;
         this.milisecond = 0;
+        this.count = 0;
         this.mNode.textContent = "00";
         this.sNode.textContent = "00";
         this.msNode.textContent = "0";
