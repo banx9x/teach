@@ -1,7 +1,7 @@
 export default class {
     constructor(clock, start, record, stop, reset, records) {
         this.minute = 0;
-        this.second = 50;
+        this.second = 0;
         this.milisecond = 0;
         this.count = 0;
 
