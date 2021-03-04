@@ -7,4 +7,4 @@ let stop = document.getElementById("stop");
 let reset = document.getElementById("reset");
 let records = document.getElementById("records");
 
-new Clock(clock, start, record, stop, reset, records);
+let CL = new Clock(clock, start, record, stop, reset, records);
