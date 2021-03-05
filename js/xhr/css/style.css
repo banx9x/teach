@@ -1,0 +1,32 @@
+@import "./loading.css";
+
+.container {
+    width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.post-link {
+    text-decoration: none;
+    color: inherit;
+}
+
+.post-link:hover {
+    text-decoration: underline solid;
+}
+
+.pagination-item {
+    margin: 0 5px;
+    text-decoration: none;
+    display: inline-block;
+    padding: 10px;
+    min-width: 20px;
+    background-color: darkblue;
+    color: white;
+    text-align: center;
+}
+
+.pagination-item.current {
+    pointer-events: none;
+    background-color: gray;
+}
