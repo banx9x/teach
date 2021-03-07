@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width" />
+        <title>JS Bin</title>
+        <style>
+            img {
+                max-width: 100%;
+            }
+        </style>
+    </head>
+    <body>
+        <picture>
+            <source
+                type="image/webp"
+                media="(max-width: 599.9px)"
+                srcset="xs.webp"
+            />
+            <source
+                type="image/webp"
+                media="(min-width: 600px)"
+                srcset="lg.webp"
+            />
+            <img src="lg.webp" alt="Responsive image" />
+        </picture>
+    </body>
+</html>
