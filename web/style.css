@@ -1,0 +1,17 @@
+body {
+    /* padding: 50px; */
+    word-spacing: -1ch;
+}
+
+p {
+    display: inline-block;
+    /* display: none; */
+    width: 25%;
+    height: 100px;
+    /* Đặt cho kích thước phần nội dung */
+    padding: 5px 10px 20px 30px;
+    background-color: yellow;
+    word-spacing: normal;
+    border: 1px solid grey;
+    box-sizing: border-box;
+}
